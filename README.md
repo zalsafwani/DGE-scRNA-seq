@@ -5,7 +5,7 @@ The goal of this project is to run differential gene expression analysis of sing
 
 ## Language and installation
 ### DEsingle 
-installed DEsingle using the code: 
+-installed DEsingle using the code: 
 if(!require(devtools)) install.packages("devtools")
 #devtools::install_github("miaozhun/DEsingle", build_vignettes = TRUE)
 
