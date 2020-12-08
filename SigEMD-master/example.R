@@ -1,7 +1,7 @@
 ## SigEMD needs log2(TPM+1) as input data.
 
 
-setwd("/Users/peng/Google Drive/singleCellRNA/SigEMD") # set your working path
+#setwd("/Users/peng/Google Drive/singleCellRNA/SigEMD") # set your working path
 # SigEMD is based on R package "aod","arm","fdrtool","lars", "emdist"
 
 #if (!requireNamespace("BiocManager", quietly = TRUE))
@@ -44,10 +44,10 @@ data<-datimp$alldat
 #If the user did not impute the data, then "Hur_gene" can be set to NULL. 
 results<- calculate_single(data =  data,condition =  condition,Hur_gene = Hur_gene, binSize=0.2,nperm=5)
 # Set Hur_gene to NULL if imputation isn't applied.
-resultsSigEMD<- calculate_single(data =  data,condition =  condition,Hur_gene = NULL, binSize=0.2,nperm=5)
+#results<- calculate_single(data =  data,condition =  condition,Hur_gene = NULL, binSize=0.2,nperm=5)
 
 # The function returns a matrix with EMD score and the adjust p-value of each gene.
-emd<- resultsSigEMD$emdall
+emd<- results$emdall
 head(emd)
 
 # The function plot_emd_density_sig will display the density distributions of each of the groups for a given gene.
