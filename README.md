@@ -7,10 +7,12 @@ The goal of this project is to run differential gene expression analysis of sing
 R language will be used for both tools
 
 ### DEsingle 
-- installed DEsingle using the code: ->
--- if(!require(devtools)) install.packages("devtools")
+Install DEsingle using the code:
+- if(!require(devtools)) install.packages("devtools")
 devtools::install_github("miaozhun/DEsingle", build_vignettes = TRUE)
 
 ### SigEMD
--
+SigEMD is based on R package "aod","arm","fdrtool","lars", "emdist":
+- 
+
 
