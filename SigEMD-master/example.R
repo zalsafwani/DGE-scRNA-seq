@@ -50,7 +50,7 @@ results<- calculate_single(data =  data,condition =  condition,Hur_gene = Hur_ge
 # The function returns a matrix with EMD score and the adjust p-value of each gene.
 emd<- results$emdall
 end_time <- Sys.time()
-run_time <- end_time - start_time
+(run_time <- end_time - start_time)
 head(emd)
 
 # The function plot_emd_density_sig will display the density distributions of each of the groups for a given gene.
