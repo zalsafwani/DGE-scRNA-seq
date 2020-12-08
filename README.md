@@ -8,7 +8,7 @@ R language will be used for both tools
 
 ### DEsingle 
 - installed DEsingle using the code: ->
-- if(!require(devtools)) install.packages("devtools")
+-- if(!require(devtools)) install.packages("devtools")
 devtools::install_github("miaozhun/DEsingle", build_vignettes = TRUE)
 
 ### SigEMD
