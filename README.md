@@ -5,6 +5,7 @@ The goal of this project is to run differential gene expression analysis of sing
 
 ## Language and installation
 R language will be used for both tools
+Make sure to have version 4.0.3 and RStudio version 1.3
 
 ### DEsingle (http://bioconductor.riken.jp/packages/3.7/bioc/vignettes/DEsingle/inst/doc/DEsingle.html)
 Install DEsingle using the code:
