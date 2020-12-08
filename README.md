@@ -15,7 +15,7 @@ SigEMD is based on R package "aod","arm","fdrtool","lars", "emdist"
 ### SigEMD
 SigEMD is based on R package make sure these are install packges before running the analysis:
 - "aod","arm","fdrtool","lars", "emdist"
-Run the bellow code for one more package
+* Run the bellow code for one more package:
 - if (!requireNamespace("BiocManager", quietly = TRUE))
 install.packages("BiocManager")
 BiocManager::install("BiocParallel")
