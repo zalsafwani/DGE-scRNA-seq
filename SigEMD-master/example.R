@@ -1,7 +1,7 @@
 ## SigEMD needs log2(TPM+1) as input data.
 
 
-#setwd("/Users/peng/Google Drive/singleCellRNA/SigEMD") # set your working path
+setwd("~/Downloads/SigEMD-master") # set your working path
 # SigEMD is based on R package "aod","arm","fdrtool","lars", "emdist"
 
 #if (!requireNamespace("BiocManager", quietly = TRUE))
