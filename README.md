@@ -35,8 +35,7 @@ BiocManager::install("BiocParallel")
 1. For test run, downlowd the SigEMD-master file and set it as working directory
 -For example.R (test run) set your working path to the SigEMD-master
 2. For the zalsafwani_SigEMD_run: 
--set your working path to the SigEMD-master and the path to dataset file after unziping it
-
+I wasn’t able to run the full dataset because the code weren’t commented for some of the function so I couldn’t run it. 
 
 
 
