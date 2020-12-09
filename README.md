@@ -16,6 +16,10 @@ devtools::install_github("miaozhun/DEsingle", build_vignettes = TRUE)
 1. For test run it without the need to change.
 2. For the zalsafwani_DEsingle_run: set your working directory that has countsAllenData.csv data, and change the dataset_path to the place with the countsAllenData.csv
 
+- Result of test run: it took 33.94464 secs to run the tool. It was able to find 21 genes in DEa, 55 in DEg, and 13 in DEs. There were 42 down regulatory genes and 47 up regulatory genes
+
+- Result of zalsafwani_DEsingle_run:it took 19.14017 secs to run the tool for the small dataset and 50.78816 mins to run the full dataset. 
+For the small run, it was able to find 3 genes in DEa, 7 in DEg, and 0 in DEs. There were 7 down regulatory genes and 3 up regulatory genes.
 
 
 ### SigEMD (https://github.com/NabaviLab/SigEMD) some code has been added to make it work 
@@ -25,3 +29,5 @@ SigEMD is based on R package make sure these are install packges before running 
 - if (!requireNamespace("BiocManager", quietly = TRUE))
 install.packages("BiocManager")
 BiocManager::install("BiocParallel")
+
+
