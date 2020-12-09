@@ -7,8 +7,23 @@
 #write.csv(rsem_counts,"countsAllenData.csv")
 
 # Or use the provided csv file
-setwd("~/Downloads/ProjectDatasets")
+setwd("~/Downloads/SigEMD-master")
 dataset_path = "~/Downloads/ProjectDatasets/tpm_countsAllenData.csv"
+# SigEMD is based on R package "aod","arm","fdrtool","lars", "emdist"
+
+#if (!requireNamespace("BiocManager", quietly = TRUE))
+#install.packages("BiocManager")
+#BiocManager::install("BiocParallel")
+
+library(aod)
+library(arm)
+library(fdrtool)
+library(lars)
+library(emdist)
+source("FunImpute.R")
+source("SigEMDHur.R")
+source("SigEMDnonHur.R")
+source("plot_sig.R")
 
 # Make the dataset in the correct format
 tmp_countdata <- read.csv(file=dataset_path,row.names=1)
@@ -17,7 +32,6 @@ tmp_countSamll <- tmp_countdata[1:100,1:92]
 #write.csv(tmp_countdata, "tmp_countdata.csv")
 
 
-#datafull <- read.csv(file="~/SigEMD-master/tpm_countsAllenData.csv",row.names=1)
 start_time <- Sys.time()
 tmp_countSamll <- dataclean(tmp_countSamll)
 databinary<- databin(tmp_countSamll)
@@ -35,8 +49,3 @@ head(emdFullDataset)
 
 write.csv(emd,"SigEMD_example_Result.csv")
 
-# The function plot_emd_density_sig will display the density distributions of each of the groups for a given gene.
-plot_emd_density_sig(resultsFullDataset,"PNKD")
-
-# We can plot the gene with the largest EMD score:
-plot_emd_density_sig(resultsFullDataset,rownames(emd[order(-emd[,"emd"]),])[1])
