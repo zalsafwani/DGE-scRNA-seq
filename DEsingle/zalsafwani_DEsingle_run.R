@@ -1,5 +1,5 @@
 # Set the working directory
-#setwd("~/Downloads/ProjectDatasets") # set your working directory that has data
+setwd("~/Downloads/ProjectDatasets") # set your working directory that has data count csv file
 
 # Install developmental version from GitHub
 #if(!require(devtools)) install.packages("devtools")
@@ -17,10 +17,10 @@ library(DEsingle)
 #write.csv(rsem_counts,"countsAllenData.csv")
 
 # Or use the provided csv file
-#dataset_path = "~/Downloads/ProjectDatasets/countsAllenData.csv"
+dataset_path = "~/Downloads/ProjectDatasets/countsAllenData.csv" # set your own path where the dataset is
 
-# Make the dataset in the correct format
-countdataFix <- read.csv(file=dataset_path,row.names=1)
+# Make the dataset in the correct format 
+countdataFix <- read.csv(file=dataset_path,row.names=1) 
 
 # Run DEsingle for a portion of the dataset
 start_time_small_run <- Sys.time()
@@ -35,9 +35,15 @@ results.classified <- DEtype(results = results, threshold = 0.05)
 # Extract DE genes at threshold of FDR < 0.05
 results.sig_small_run <- results.classified[results.classified$pvalue.adj.FDR < 0.05, ]
 
+# Extract three types of DE genes separately
+results.DEs <- results.sig_small_run[results.sig_small_run$Type == "DEs", ]
+results.DEa <- results.sig_small_run[results.sig_small_run$Type == "DEa", ]
+results.DEg <- results.sig_small_run[results.sig_small_run$Type == "DEg", ]
+
 # Extract up and down rgulatury genes separately
-results.down_small_run <- results.sig_small_run[results.sig$State == "down", ]
-results.up_small_run <- results.sig_small_run[results.sig$State == "up", ]
+results.down_small_run <- results.sig_small_run[results.sig_small_run$State == "down", ]
+results.up_small_run <- results.sig_small_run[results.sig_small_run$State == "up", ]
+
 
 end_time_small_run <- Sys.time()
 (end_time_small_run - start_time_small_run) # Time difference of 19.14017 secs
