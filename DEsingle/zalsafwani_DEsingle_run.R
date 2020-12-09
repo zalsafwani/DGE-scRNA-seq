@@ -31,6 +31,14 @@ group <- factor(c(rep(1,50), rep(2,100)))
 results <- DEsingle(counts = samplesSmall, group = group)
 # Dividing the DE genes into 3 categories at threshold of FDR < 0.05
 results.classified <- DEtype(results = results, threshold = 0.05)
+
+# Extract DE genes at threshold of FDR < 0.05
+results.sig_small_run <- results.classified[results.classified$pvalue.adj.FDR < 0.05, ]
+
+# Extract up and down rgulatury genes separately
+results.down_small_run <- results.sig_small_run[results.sig$State == "down", ]
+results.up_small_run <- results.sig_small_run[results.sig$State == "up", ]
+
 end_time_small_run <- Sys.time()
 (end_time_small_run - start_time_small_run) # Time difference of 19.14017 secs
 
