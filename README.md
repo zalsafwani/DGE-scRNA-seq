@@ -14,7 +14,7 @@ devtools::install_github("miaozhun/DEsingle", build_vignettes = TRUE)
 
 * To run the tool download the countsAllenData.csv and tpm_countsAllenData.zip (unzip this file)
 ## Running DEsingle
-1. For test_run it without the need to change.
+1. For test_dataset it without the need to change.
 2. For the zalsafwani_DEsingle_run: set your working directory that has countsAllenData.csv data, and change the dataset_path to the place with the countsAllenData.csv
 
 - Result of test run: it took 33.94464 secs to run the tool. It was able to find 21 genes in DEa, 55 in DEg, and 13 in DEs. There were 42 down regulatory genes and 47 up regulatory genes
