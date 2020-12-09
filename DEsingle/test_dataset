@@ -24,6 +24,11 @@ results.DEs <- results.sig[results.sig$Type == "DEs", ]
 results.DEa <- results.sig[results.sig$Type == "DEa", ]
 results.DEg <- results.sig[results.sig$Type == "DEg", ]
 
+# Extract up and down rgulatury genes separately
+results.down_test <- results.sig[results.sig$State == "down", ]
+results.up_test <- results.sig[results.sig$State == "up", ]
+
+
 end_time <- Sys.time()
 
 (end_time - start_time)
